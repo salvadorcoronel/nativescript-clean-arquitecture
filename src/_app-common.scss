@@ -1,2 +1,38 @@
 @import "~@nativescript/theme/core";
 @import "~@nativescript/theme/blue";
+
+.animate-slideInUp-delay-0ms {
+  animation-name: slideInUp;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  animation-delay: 0ms;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-slideOutDown-delay-0ms {
+  animation-name: slideOutDown;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  animation-delay: 0ms;
+}
+
+@keyframes slideOutDown {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(0, 100%, 0);
+  }
+}

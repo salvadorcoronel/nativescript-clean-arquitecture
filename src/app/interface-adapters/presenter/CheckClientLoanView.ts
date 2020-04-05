@@ -2,4 +2,9 @@ import { ClientViewModelDS } from "~/app/interface-adapters/controller/checkClie
 
 export interface CheckClientLoanView {
   onCheckClientLoan(passedTest: boolean): void;
+  setMessage(message: string): void;
+  enableLoading(showLoading: boolean): void;
+  enableButton(enable: boolean): void;
+  restartViewModel(): void;
+  dismissSoftKeybaord(): void;
 }

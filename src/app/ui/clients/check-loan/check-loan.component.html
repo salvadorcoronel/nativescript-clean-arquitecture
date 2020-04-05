@@ -1,4 +1,41 @@
-<StackLayout>
-  <Button (tap)="checkClientLoan()" text="Check Loan works!" class="btn btn-primary"></Button>
-  <Label [text]="passedTest"></Label>
-</StackLayout>
+<ActionBar title="Check Client Loan"></ActionBar>
+  <GridLayout rows="*,42"
+    columns="24,*,24">
+    <ScrollView orientation="vertical" row="0" col="1">
+      <StackLayout class="m-t-24">
+
+        <Label [text]="descriptionLabel" textWrap="true" class="h3"></Label>
+
+        <TextField 
+          class="input" 
+          hint="First Name" 
+          (textChange)="onTextChangeValidate()"
+          [(ngModel)]="clientViewModel.firstName"
+          maxLength="50"
+        ></TextField>
+
+        <TextField 
+          class="input" 
+          hint="Last Name" 
+          maxLength="50"
+          (textChange)="onTextChangeValidate()"
+          [(ngModel)]="clientViewModel.lastName">
+        </TextField>
+
+        <TextField 
+          class="input" 
+          hint="DNI" 
+          keyboardType="phone"
+          maxLength="8"
+          (textChange)="onTextChangeValidate()"
+          [(ngModel)]="clientViewModel.dni">
+        </TextField>
+        
+        <Button (tap)="checkClientLoan()" text="Validate!" class="-primary -rounded-sm" [isEnabled]="isEnableButton"></Button>
+        <ActivityIndicator *ngIf="showLoading" busy="true"></ActivityIndicator>  
+      </StackLayout>
+    </ScrollView>
+
+    <Label *ngIf="message" row="1" col="0" colSpan="3" [className]="messageClasses" [text]="message"></Label>
+
+  </GridLayout>

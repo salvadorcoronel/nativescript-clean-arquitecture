@@ -26,4 +26,9 @@ export class CheckClientLoanControllerImpl {
     const clientInputControllerDS: ClientInputControllerDS = CheckClientLoanControllerMapper.transformClientViewModelDSToClientInputControllerDS(client);
     this.checkClientLoan.check(clientInputControllerDS);
   }
+
+  validate(client: ClientViewModelDS): void {
+    const clientInputControllerDS: ClientInputControllerDS = CheckClientLoanControllerMapper.transformClientViewModelDSToClientInputControllerDS(client);
+    this.checkClientLoan.validate(clientInputControllerDS);
+  }
 }

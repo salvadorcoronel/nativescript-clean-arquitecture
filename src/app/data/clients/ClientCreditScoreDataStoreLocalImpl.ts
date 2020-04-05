@@ -2,6 +2,7 @@
 import { ClientCreditScoreDS } from "./ClientCreditScoreDS";
 import { ClientCreditScoreDataStore } from "~/app/interface-adapters/gateway/clients/ClientCreditScoreDataStore";
 
+
 export class ClientCreditScoreDataStoreLocalImpl implements ClientCreditScoreDataStore {
   clientCreditScoreList: ClientCreditScoreDS[] = [
     { dni: '41111111', creditScore: 520 },

@@ -53,6 +53,6 @@ export class Client {
   }
 
   private validateName(name: string): boolean {
-    return name.length > 4;
+    return name.length > 2;
   }
 }
