@@ -1,11 +1,14 @@
 /* Add mobile styles for the component here.  */
-.input {
+TextField {
   border-width: 1;
   font-size: 14;
   padding: 12;
-  /*border-color: #cccccc;
-  background-color: #eeeeee;
-  placeholder-color: #cccccc;*/
+  placeholder-color: #cccccc;
+}
+
+Label {
+  padding: 4 15;
+  font-weight: bold;
 }
 
 .message {

@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CheckClientLoanView } from '~/app/interface-adapters/presenter/CheckClientLoanView';
 import { CheckClientLoanControllerImpl } from '~/app/interface-adapters/controller/CheckClientLoanControllerImpl';
 import { ClientViewModelDS } from '~/app/interface-adapters/controller/checkClientLoan/ClientViewModelDS';
-import { isIOS, isAndroid } from '@nativescript/core/platform/platform';
 import { Page } from 'tns-core-modules/ui/page/page';
-import { ad } from '@nativescript/core/utils/utils';
+import { KeyboardFactory } from '~/app/libs/keyboard/keyboard.factory';
 
 const CLASES_MESSAGE_SLIDEINUP = 'message animate-slideInUp-delay-0ms';
 const CLASES_MESSAGE_SLIDEOUTDOWN = 'message animate-slideOutDown-delay-0ms';
@@ -19,7 +18,7 @@ export class CheckLoanComponent implements OnInit, CheckClientLoanView {
   isEnableButton: boolean = false;
   showLoading: boolean = false;
   message: string = '';
-  descriptionLabel: string = 'This form allows to validate if a user is enabled to receive a loan based on their credit score.';
+  descriptionLabel: string = 'This form allows to validate if an user is enabled to receive a loan based on their credit score.';
   messageClasses: string = CLASES_MESSAGE_SLIDEINUP;
 
   passedTest: boolean = false;
@@ -32,6 +31,7 @@ export class CheckLoanComponent implements OnInit, CheckClientLoanView {
   }
 
   ngOnInit(): void {
+
   }
 
   checkClientLoan(): void {
@@ -86,15 +86,8 @@ export class CheckLoanComponent implements OnInit, CheckClientLoanView {
     }, 100);
   }
 
-  ngOnDestroy() { }
-
-  dismissSoftKeybaord() {
-    if (isIOS) {
-      this._page.nativeView.endEditing(true);
-    }
-    if (isAndroid) {
-      ad.dismissSoftInput();
-    }
+  hideKeyboard() {
+    KeyboardFactory.getInstance().hide(this._page);
   }
 
 }

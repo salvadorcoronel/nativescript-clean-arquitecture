@@ -6,25 +6,28 @@
 
         <Label [text]="descriptionLabel" textWrap="true" class="h3"></Label>
 
+        <Label class="label" text="First Name"></Label>
         <TextField 
           class="input" 
-          hint="First Name" 
+          hint="Salvador" 
           (textChange)="onTextChangeValidate()"
           [(ngModel)]="clientViewModel.firstName"
           maxLength="50"
         ></TextField>
 
+        <Label class="label" text="Last Name"></Label>
         <TextField 
           class="input" 
-          hint="Last Name" 
+          hint="Coronel" 
           maxLength="50"
           (textChange)="onTextChangeValidate()"
           [(ngModel)]="clientViewModel.lastName">
         </TextField>
 
+        <Label class="label" text="DNI (8 digits)"></Label>
         <TextField 
           class="input" 
-          hint="DNI" 
+          hint="46200966" 
           keyboardType="phone"
           maxLength="8"
           (textChange)="onTextChangeValidate()"

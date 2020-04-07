@@ -6,5 +6,5 @@ export interface CheckClientLoanView {
   enableLoading(showLoading: boolean): void;
   enableButton(enable: boolean): void;
   restartViewModel(): void;
-  dismissSoftKeybaord(): void;
+  hideKeyboard(): void;
 }

@@ -23,7 +23,7 @@ export class CheckClientLoanPresenterImpl implements CheckClientLoanOutputBounda
   onValidate(isValidated: boolean): void {
     this.checkClientLoanView.enableButton(isValidated);
     if (isValidated)
-      this.checkClientLoanView.dismissSoftKeybaord();
+      this.checkClientLoanView.hideKeyboard();
   }
 
 }
